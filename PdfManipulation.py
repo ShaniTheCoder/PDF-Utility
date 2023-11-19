@@ -67,21 +67,6 @@ def ImageToPdf():
     )
 
 
-def Image2Pdf(*pdf_files):
-    from PIL import Image
-    # Loop over the pdf files
-    for pdf_file in pdf_files:
-        # Open the pdf file and read the images
-        images = [Image.open(pdf_file + "/" + f)
-                  for f in ["sample1.jpeg", "sample2.jpeg", "sample3.jpeg"]]
-        # Set the output pdf path
-        pdf_path = pdf_file + "/imageJpeg.pdf"
-        # Save the images as a pdf file
-        images[0].save(
-            pdf_path, "PDF", resolution=100.0, save_all=True, append_images=images[1:]
-        )
-
-
 def MergePdf(*pdFile):
     merger = PdfWriter()
 
